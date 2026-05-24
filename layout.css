@@ -1,0 +1,329 @@
+/* ==========================================================================
+   IMS566 INDIVIDUAL ASSIGNMENT - PRESENTATION LAYER WITH LIGHT/DARK MODES
+   ========================================================================== */
+
+/* 1. Global Light Theme Property Tokens (Default State) */
+:root, [data-theme="light"] {
+    --brand-primary: #0d6efd;
+    --brand-dark-neutral: #0f172a;
+    --bg-canvas: #f8fafc;
+    --card-surface: #ffffff;
+    --border-soft: #e2e8f0;
+    
+    /* Font Color Tokens for Light Mode */
+    --text-main: #1e293b;         /* Deep slate for high legibility */
+    --text-muted-custom: #64748b;  /* Muted secondary gray */
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08);
+}
+
+/* 2. Global Dark Theme Property Tokens Override Matrix */
+[data-theme="dark"] {
+    --bg-canvas: #0f172a;
+    --card-surface: #1e293b;
+    --border-soft: #334155;
+    
+    /* Font Color Tokens for Dark Mode */
+    --text-main: #f8fafc;         /* Crisp off-white to prevent eye strain */
+    --text-muted-custom: #94a3b8;  /* Soft silver for secondary descriptions */
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.5);
+}
+
+/* 3. Global Typography Theme Dynamic Bindings */
+body {
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Overrides Bootstrap's hardcoded utility colors instantly across standard texts */
+h1, h2, h3, h4, h5, h6, p, label, span, td, th, .form-control {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+/* Overrides primary text classes if they exist inline */
+.text-dark {
+    color: var(--text-main) !important;
+}
+
+/* Overrides muted/secondary text elements cleanly */
+.text-secondary, .text-muted, .small, .extra-small {
+    color: var(--text-muted-custom) !important;
+    transition: color 0.3s ease;
+}
+
+/* Fixes input fields so typed text and placeholders look correct in dark mode */
+.form-control::placeholder {
+    color: var(--text-muted-custom) !important;
+}
+.form-control {
+    background-color: transparent !important;
+    border-color: var(--border-soft) !important;
+}
+
+/* ==========================================================================
+   DARK MODE TABLE CONTRAST & SPECIFICITY FIXES
+   ========================================================================== */
+[data-theme="dark"] .table {
+    --bs-table-color: var(--text-main) !important;
+    --bs-table-bg: transparent !important;
+    --bs-table-hover-color: var(--text-main) !important;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.03) !important;
+    border-color: var(--border-soft) !important;
+}
+
+[data-theme="dark"] .table td, 
+[data-theme="dark"] .table th {
+    color: var(--text-main) !important;
+    border-bottom-color: var(--border-soft) !important;
+}
+
+/* ==========================================================================
+   4. Component Safety Fixes (Prevents Button Color Hijacking)
+   ========================================================================== */
+
+/* Light Mode Rules (Default State) */
+.btn-outline-danger {
+    color: #dc3545 !important;            /* High-contrast Red text for Light Mode */
+    border-color: #dc3545 !important;     /* Clean Red border line */
+    background-color: transparent !important;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Light Mode Hover State */
+.btn-outline-danger:hover {
+    color: #ffffff !important;            /* Sharp White text over Red background */
+    background-color: #dc3545 !important; /* Solid Red background color filled */
+    border-color: #dc3545 !important;
+}
+
+/* Explicit Dark Mode Overrides */
+[data-theme="dark"] .btn-outline-danger {
+    color: #ff6b6b !important;            /* Lighter, high-visibility Red text on Dark canvas */
+    border-color: #ff6b6b !important;     /* Matching high-visibility border line */
+    background-color: transparent !important;
+}
+
+/* Dark Mode Hover State */
+[data-theme="dark"] .btn-outline-danger:hover {
+    color: #ffffff !important;            /* Clean White text over filled background */
+    background-color: #dc3545 !important; /* Rich Red block fill */
+    border-color: #dc3545 !important;
+}
+
+/* ==========================================================================
+   Structural Layout Components
+   ========================================================================== */
+
+.application-view-wrapper {
+    flex: 1;
+}
+
+/* Scope 3.1: Adaptive Auth Viewport Layout Mechanics */
+.auth-viewport-centering-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.auth-panel-card {
+    border: 1px solid var(--border-soft);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    background-color: var(--card-surface);
+    width: 100%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-badge-graphic-icon {
+    background-color: var(--brand-primary);
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 16px rgba(13, 110, 253, 0.2);
+}
+/* Ensure icon inside badge keeps white text */
+.auth-badge-graphic-icon i {
+    color: #ffffff !important;
+}
+
+/* Scope 3.3: Executive Dashboard Summary Cards */
+.dashboard-summary-metric-card {
+    border: 1px solid var(--border-soft);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    background-color: var(--card-surface);
+}
+
+.dashboard-summary-metric-card:hover {
+    transform: translateY(-4px);
+}
+
+.metric-visual-badge {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scope 3.4: Data Layout Micro-Styles */
+.data-display-container-card {
+    border: 1px solid var(--border-soft);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--card-surface);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.table-layout-boundary {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+/* Table Framework Color Inversions */
+.table-light { 
+    --bs-table-bg: var(--border-soft) !important; 
+    --bs-table-color: var(--text-main) !important; 
+}
+
+.patron-identity-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* Chart Height Wrapper Configuration */
+.chart-view-frame-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+
+@media (min-width: 768px) {
+    .chart-view-frame-wrapper { height: 350px; }
+}
+
+.navbar-custom-brand-link {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--brand-primary) !important;
+}
+
+/* Theme Toggle Button Layout rules */
+.theme-utility-btn {
+    border: 1px solid var(--border-soft);
+    background-color: var(--card-surface);
+    color: var(--text-main) !important;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.theme-utility-btn i {
+    color: var(--text-main) !important;
+}
+
+.theme-utility-btn:hover {
+    background-color: var(--border-soft);
+}
+
+footer {
+    border-top: 1px solid var(--border-soft);
+    background-color: var(--brand-dark-neutral);
+}
+/* Ensure footer descriptions retain structural styling text color rules */
+footer p {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+footer .text-white {
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   5. MOBILE TABLE REFLOW LAYOUT MATRIX Engine
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    /* Break down standard grid formatting structures on responsive screens */
+    .table-responsive-mobile, 
+    .table-responsive-mobile thead, 
+    .table-responsive-mobile tbody, 
+    .table-responsive-mobile th, 
+    .table-responsive-mobile td, 
+    .table-responsive-mobile tr { 
+        display: block !important; 
+        width: 100% !important;
+    }
+    
+    /* Remove the default row headers securely */
+    .table-responsive-mobile thead {
+        display: none !important;
+    }
+    
+    /* Dress up every database row entry as an isolated viewport dashboard card */
+    .table-responsive-mobile tr {
+        border-bottom: 2px solid var(--border-soft) !important;
+        padding: 1rem 0 !important;
+        background-color: var(--card-surface) !important;
+    }
+    
+    /* Restructure the layout matrix coordinates dynamically */
+    .table-responsive-mobile td {
+        text-align: left !important;
+        padding: 0.5rem 1rem !important;
+        border: none !important;
+        position: relative;
+        padding-left: 45% !important; /* Reserve real estate area for row attributes */
+        white-space: normal !important; /* Allow long titles to wrap instead of clip */
+    }
+    
+    /* Extract metadata dynamically from data-label attributes */
+    .table-responsive-mobile td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--text-muted-custom) !important;
+    }
+    
+    /* Wipe unnecessary spacing offsets across compressed mobile interfaces */
+    .table-responsive-mobile td.text-end,
+    .table-responsive-mobile td.pe-4 {
+        text-align: left !important;
+    }
+    .table-responsive-mobile td.ps-4 {
+        padding-left: 45% !important;
+    }
+}

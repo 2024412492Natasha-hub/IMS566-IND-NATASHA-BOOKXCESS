@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookXcess - Media Catalog Matrix</title>
+    <meta name="description" content="IMS566 Modern Tabular Core Inventory Dataset Sheet Presenter Module View">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+        <div class="container px-4">
+            <a class="navbar-brand navbar-custom-brand-link" href="dashboard.html"><i class="bi bi-book-half me-2"></i>BookXcess</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#modularSystemNavigationDropdown"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="modularSystemNavigationDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link py-2 px-3" href="dashboard.html"><i class="bi bi-speedometer2 me-1.5"></i> Dashboard Console</a></li>
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link active py-2 px-3 rounded text-white bg-primary bg-lg-transparent" href="books.html"><i class="bi bi-collection-fill me-1.5"></i> Media Catalogs</a></li>
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link py-2 px-3" href="members.html"><i class="bi bi-people-fill me-1.5"></i> Patron Directory</a></li>
+                    
+                    <li class="nav-item dropdown my-1 my-lg-0">
+                        <a class="nav-link dropdown-toggle py-2 px-3 text-secondary" href="#" id="systemServiceDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-sliders me-1.5"></i> Operations Hub
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary shadow" aria-labelledby="systemServiceDropdownMenu">
+                            <li><a class="dropdown-item py-2" href="books.html"><i class="bi bi-plus-circle me-2"></i> Add Catalog Volume</a></li>
+                            <li><a class="dropdown-item py-2" href="members.html"><i class="bi bi-person-plus me-2"></i> Register Borrower</a></li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li><a class="dropdown-item py-2 text-info" href="#"><i class="bi bi-file-earmark-bar-graph me-2"></i> Export Analytics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-3">
+                    <button class="theme-utility-btn w-100" onclick="toggleSystemTheme()" aria-label="Switch Mode">
+                        <i id="themeToggleIcon" class="bi bi-moon-stars-fill me-2"></i>Theme Tool
+                    </button>
+                </div>
+
+                <div class="d-flex border-top border-secondary pt-3 pt-lg-0 border-top-lg-0"><a href="index.html" class="btn btn-outline-danger btn-sm w-100 px-3 fw-bold"><i class="bi bi-power me-1"></i> Disconnect Session</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="application-view-wrapper container my-5 px-4">
+        <header class="mb-4">
+            <h2 class="fw-bold text-dark mb-1">Catalogued Media Registry</h2>
+            <p class="text-secondary small mb-0">Comprehensive tracking sheet across 50 structured data table rows.</p>
+            <hr class="opacity-10">
+        </header>
+
+        <section class="card data-display-container-card" aria-label="Structured Collection Data Grid">
+            <div class="table-layout-boundary table-responsive">
+                <table class="table table-hover align-middle mb-0 text-nowrap">
+                    <thead class="table-light text-uppercase fs-7 tracking-wider text-secondary">
+                        <tr>
+                            <th class="ps-4 py-3">ISBN Barcode</th>
+                            <th class="py-3">Volume Core Title</th>
+                            <th class="py-3">Author Authority</th>
+                            <th class="py-3">Genre Class</th>
+                            <th class="pe-4 py-3 text-end">Availability State</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141439518</td>
+                            <td class="fw-bold text-dark">Pride and Prejudice</td>
+                            <td>Jane Austen</td>
+                            <td>Classic Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0451524935</td>
+                            <td class="fw-bold text-dark">Nineteen Eighty-Four</td>
+                            <td>George Orwell</td>
+                            <td>Dystopian Literature</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0316769488</td>
+                            <td class="fw-bold text-dark">The Catcher in the Rye</td>
+                            <td>J.D. Salinger</td>
+                            <td>Modern Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0743273565</td>
+                            <td class="fw-bold text-dark">The Great Gatsby</td>
+                            <td>F. Scott Fitzgerald</td>
+                            <td>Classic Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0061120084</td>
+                            <td class="fw-bold text-dark">To Kill a Mockingbird</td>
+                            <td>Harper Lee</td>
+                            <td>Classic Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0345339683</td>
+                            <td class="fw-bold text-dark">The Hobbit</td>
+                            <td>J.R.R. Tolkien</td>
+                            <td>Fantasy Literature</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0060850524</td>
+                            <td class="fw-bold text-dark">Brave New World</td>
+                            <td>Aldous Huxley</td>
+                            <td>Dystopian Literature</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0452284234</td>
+                            <td class="fw-bold text-dark">Animal Farm</td>
+                            <td>George Orwell</td>
+                            <td>Political Satire</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-1451673319</td>
+                            <td class="fw-bold text-dark">Fahrenheit 451</td>
+                            <td>Ray Bradbury</td>
+                            <td>Dystopian Literature</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141441146</td>
+                            <td class="fw-bold text-dark">Jane Eyre</td>
+                            <td>Charlotte Brontë</td>
+                            <td>Classic Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141439556</td>
+                            <td class="fw-bold text-dark">Wuthering Heights</td>
+                            <td>Emily Brontë</td>
+                            <td>Gothic Romance</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0142437247</td>
+                            <td class="fw-bold text-dark">Moby-Dick</td>
+                            <td>Herman Melville</td>
+                            <td>Classic Adventure</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0140449136</td>
+                            <td class="fw-bold text-dark">Crime and Punishment</td>
+                            <td>Fyodor Dostoevsky</td>
+                            <td>Philosophical Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0140268867</td>
+                            <td class="fw-bold text-dark">The Odyssey</td>
+                            <td>Homer</td>
+                            <td>Epic Poetry</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141439471</td>
+                            <td class="fw-bold text-dark">Frankenstein</td>
+                            <td>Mary Shelley</td>
+                            <td>Gothic Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141439846</td>
+                            <td class="fw-bold text-dark">Dracula</td>
+                            <td>Bram Stoker</td>
+                            <td>Horror Literature</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141442464</td>
+                            <td class="fw-bold text-dark">The Picture of Dorian Gray</td>
+                            <td>Oscar Wilde</td>
+                            <td>Philosophical Horror</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141439549</td>
+                            <td class="fw-bold text-dark">Great Expectations</td>
+                            <td>Charles Dickens</td>
+                            <td>Victorian Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0143039327</td>
+                            <td class="fw-bold text-dark">Little Women</td>
+                            <td>Louisa May Alcott</td>
+                            <td>Family Drama</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0140444308</td>
+                            <td class="fw-bold text-dark">Les Misérables</td>
+                            <td>Victor Hugo</td>
+                            <td>Historical Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0140447934</td>
+                            <td class="fw-bold text-dark">War and Peace</td>
+                            <td>Leo Tolstoy</td>
+                            <td>Historical Epic</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0143039433</td>
+                            <td class="fw-bold text-dark">The Grapes of Wrath</td>
+                            <td>John Steinbeck</td>
+                            <td>Social Realism</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0060883287</td>
+                            <td class="fw-bold text-dark">One Hundred Years of Solitude</td>
+                            <td>Gabriel García Márquez</td>
+                            <td>Magical Realism</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141182803</td>
+                            <td class="fw-bold text-dark">Ulysses</td>
+                            <td>James Joyce</td>
+                            <td>Modernist Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-1451626650</td>
+                            <td class="fw-bold text-dark">Catch-22</td>
+                            <td>Joseph Heller</td>
+                            <td>Satirical Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0394747590</td>
+                            <td class="fw-bold text-dark">The Sound and the Fury</td>
+                            <td>William Faulkner</td>
+                            <td>Southern Gothic</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141187136</td>
+                            <td class="fw-bold text-dark">The Stranger</td>
+                            <td>Albert Camus</td>
+                            <td>Absurdist Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0141180144</td>
+                            <td class="fw-bold text-dark">Lolita</td>
+                            <td>Vladimir Nabokov</td>
+                            <td>Modern Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0441783588</td>
+                            <td class="fw-bold text-dark">Starship Troopers</td>
+                            <td>Robert A. Heinlein</td>
+                            <td>Science Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0441172719</td>
+                            <td class="fw-bold text-dark">Dune</td>
+                            <td>Frank Herbert</td>
+                            <td>Science Fiction Epic</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0441569595</td>
+                            <td class="fw-bold text-dark">Neuromancer</td>
+                            <td>William Gibson</td>
+                            <td>Cyberpunk Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0553293357</td>
+                            <td class="fw-bold text-dark">Foundation</td>
+                            <td>Isaac Asimov</td>
+                            <td>Science Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0451530738</td>
+                            <td class="fw-bold text-dark">The Time Machine</td>
+                            <td>H.G. Wells</td>
+                            <td>Science Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0451530653</td>
+                            <td class="fw-bold text-dark">The War of the Worlds</td>
+                            <td>H.G. Wells</td>
+                            <td>Alien Invasion Sci-Fi</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0553382563</td>
+                            <td class="fw-bold text-dark">I, Robot</td>
+                            <td>Isaac Asimov</td>
+                            <td>Science Fiction Stories</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0441013593</td>
+                            <td class="fw-bold text-dark">Ender's Game</td>
+                            <td>Orson Scott Card</td>
+                            <td>Military Sci-Fi</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0345453747</td>
+                            <td class="fw-bold text-dark">The Ultimate Hitchhiker's Guide</td>
+                            <td>Douglas Adams</td>
+                            <td>Sci-Fi Comedy</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0553573404</td>
+                            <td class="fw-bold text-dark">A Game of Thrones</td>
+                            <td>George R.R. Martin</td>
+                            <td>Epic Fantasy</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0345339706</td>
+                            <td class="fw-bold text-dark">The Fellowship of the Ring</td>
+                            <td>J.R.R. Tolkien</td>
+                            <td>Epic Fantasy</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0064471046</td>
+                            <td class="fw-bold text-dark">The Lion, the Witch and the Wardrobe</td>
+                            <td>C.S. Lewis</td>
+                            <td>Children's Fantasy</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0439708180</td>
+                            <td class="fw-bold text-dark">Harry Potter and the Sorcerer's Stone</td>
+                            <td>J.K. Rowling</td>
+                            <td>Fantasy Fiction</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0307474278</td>
+                            <td class="fw-bold text-dark">The Da Vinci Code</td>
+                            <td>Dan Brown</td>
+                            <td>Mystery Thriller</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0307474261</td>
+                            <td class="fw-bold text-dark">Angels & Demons</td>
+                            <td>Dan Brown</td>
+                            <td>Mystery Thriller</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0224097475</td>
+                            <td class="fw-bold text-dark">Gone Girl</td>
+                            <td>Gillian Flynn</td>
+                            <td>Psychological Thriller</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0307949486</td>
+                            <td class="fw-bold text-dark">The Girl with the Dragon Tattoo</td>
+                            <td>Stieg Larsson</td>
+                            <td>Crime Fiction Thriller</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0062316097</td>
+                            <td class="fw-bold text-dark">Sapiens: A Brief History of Humankind</td>
+                            <td>Yuval Noah Harari</td>
+                            <td>Non-Fiction History</td>
+                            <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning border border-warning px-3 py-1.5 rounded-pill">On Reserve</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-1982137274</td>
+                            <td class="fw-bold text-dark">Educated</td>
+                            <td>Tara Westover</td>
+                            <td>Biographical Memoir</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0143111597</td>
+                            <td class="fw-bold text-dark">Thinking, Fast and Slow</td>
+                            <td>Daniel Kahneman</td>
+                            <td>Psychology Science</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-0735211292</td>
+                            <td class="fw-bold text-dark">Atomic Habits</td>
+                            <td>James Clear</td>
+                            <td>Self-Help Development</td>
+                            <td class="pe-4 text-end"><span class="badge bg-danger-subtle text-danger border border-danger px-3 py-1.5 rounded-pill">Loaned Out</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4 font-monospace text-primary small fw-semibold">978-2841673315</td>
+                            <td class="fw-bold text-dark">The Alchemist</td>
+                            <td>Paulo Coelho</td>
+                            <td>Inspirational Allegory</td>
+                            <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success border border-success px-3 py-1.5 rounded-pill">Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-white-50 text-center py-4 mt-auto">
+        <div class="container px-4">
+            <p class="mb-1 text-white small fw-semibold">&copy; 2026 BookXcess Architecture Core Framework. All Rights Reserved.</p>
+            <p class="mb-0 text-muted extra-small text-uppercase tracking-wider">Advanced Web Design Assignment Hub | Universiti Teknologi MARA (UiTM)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const root = document.documentElement;
+        const icon = document.getElementById('themeToggleIcon');
+        
+        if (localStorage.getItem('themePreference') === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            icon.className = "bi bi-sun-fill me-2";
+        }
+
+        function toggleSystemTheme() {
+            if (root.getAttribute('data-theme') === 'dark') {
+                root.setAttribute('data-theme', 'light');
+                icon.className = "bi bi-moon-stars-fill me-2";
+                localStorage.setItem('themePreference', 'light');
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                icon.className = "bi bi-sun-fill me-2";
+                localStorage.setItem('themePreference', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>

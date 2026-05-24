@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookXcess - Patron Registry Card Deck</title>
+    <meta name="description" content="IMS566 Library Application Alternative Fluid Grid Block Card Layout Dataset View Core">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+        <div class="container px-4">
+            <a class="navbar-brand navbar-custom-brand-link" href="dashboard.html"><i class="bi bi-book-half me-2"></i>BookXcess</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#modularSystemNavigationDropdown"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="modularSystemNavigationDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link py-2 px-3" href="dashboard.html"><i class="bi bi-speedometer2 me-1.5"></i> Dashboard Console</a></li>
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link py-2 px-3" href="books.html"><i class="bi bi-collection-fill me-1.5"></i> Media Catalogs</a></li>
+                    <li class="nav-item my-1 my-lg-0"><a class="nav-link active py-2 px-3 rounded text-white bg-primary bg-lg-transparent" href="members.html"><i class="bi bi-people-fill me-1.5"></i> Patron Directory</a></li>
+                    
+                    <li class="nav-item dropdown my-1 my-lg-0">
+                        <a class="nav-link dropdown-toggle py-2 px-3 text-secondary" href="#" id="systemServiceDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-sliders me-1.5"></i> Operations Hub
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary shadow" aria-labelledby="systemServiceDropdownMenu">
+                            <li><a class="dropdown-item py-2" href="books.html"><i class="bi bi-plus-circle me-2"></i> Add Catalog Volume</a></li>
+                            <li><a class="dropdown-item py-2" href="members.html"><i class="bi bi-person-plus me-2"></i> Register Borrower</a></li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li><a class="dropdown-item py-2 text-info" href="#"><i class="bi bi-file-earmark-bar-graph me-2"></i> Export Analytics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-3">
+                    <button class="theme-utility-btn w-100" onclick="toggleSystemTheme()" aria-label="Switch Mode">
+                        <i id="themeToggleIcon" class="bi bi-moon-stars-fill me-2"></i>Theme Tool
+                    </button>
+                </div>
+
+                <div class="d-flex border-top border-secondary pt-3 pt-lg-0 border-top-lg-0"><a href="index.html" class="btn btn-outline-danger btn-sm w-100 px-3 fw-bold"><i class="bi bi-power me-1"></i> Disconnect Session</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="application-view-wrapper container my-5 px-4">
+        <header class="mb-4">
+            <h2 class="fw-bold text-dark mb-1">Patron User Profiles Directory</h2>
+            <p class="text-secondary small mb-0">Fluid matrix component managing registered borrowers accounts cards panels.</p>
+            <hr class="opacity-10">
+        </header>
+
+        <section class="row g-4" aria-label="Patron Structural Record Grid">
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-primary text-white">AZ</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Ahmad Zaki</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-0814</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>zaki@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-success text-white">SN</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Siti Nurhaliza</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-1042</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>siti.nur@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-danger text-white">JD</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Johnathan Doe</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-1935</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>j.doe@example.com</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>Standing: <span class="text-danger fw-bold">Suspended Block</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-info text-dark">NF</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Nur Farhana</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-2241</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>farhana@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-warning text-dark">TK</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Tan Wei Kiat</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-3012</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>weikiat@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-secondary text-white">DP</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Divya Pillay</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-4419</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>divya@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-dark text-white">KA</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Khairul Amri</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-5528</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>khairul@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-exclamation-circle-fill text-warning me-2"></i>Standing: <span class="text-warning fw-bold">On Probation</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-primary text-white">MA</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Muhammad Ali</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-6172</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>ali@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-light text-dark">SJ</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Sarah Jenkins</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-7845</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>sarah@example.com</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-patch-check-fill text-success me-2"></i>Standing: <span class="text-success fw-bold">Clear Active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card data-display-container-card h-100 p-2">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="patron-identity-avatar bg-danger text-white">FI</div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-0 text-dark small-md-normal">Fazura Ibrahim</h5>
+                                <small class="text-secondary font-monospace extra-small">UID-2026-8901</small>
+                            </div>
+                        </div>
+                        <p class="card-text mb-1 text-muted small"><i class="bi bi-envelope-at me-2"></i>fazura@uitm.edu.my</p>
+                        <p class="card-text mb-0 text-muted small"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>Standing: <span class="text-danger fw-bold">Suspended Block</span></p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="text-white-50 text-center py-4 mt-auto">
+        <div class="container px-4">
+            <p class="mb-1 text-white small fw-semibold">&copy; 2026 BookXcess Architecture Core Framework. All Rights Reserved.</p>
+            <p class="mb-0 text-muted extra-small text-uppercase tracking-wider">Advanced Web Design Assignment Hub | Universiti Teknologi MARA (UiTM)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const root = document.documentElement;
+        const icon = document.getElementById('themeToggleIcon');
+        
+        if (localStorage.getItem('themePreference') === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            icon.className = "bi bi-sun-fill me-2";
+        }
+
+        function toggleSystemTheme() {
+            if (root.getAttribute('data-theme') === 'dark') {
+                root.setAttribute('data-theme', 'light');
+                icon.className = "bi bi-moon-stars-fill me-2";
+                localStorage.setItem('themePreference', 'light');
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                icon.className = "bi bi-sun-fill me-2";
+                localStorage.setItem('themePreference', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>
